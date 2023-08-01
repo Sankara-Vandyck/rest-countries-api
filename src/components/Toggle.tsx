@@ -1,6 +1,6 @@
 import { FaMoon, FaSun } from "react-icons/fa"
 import { useState, useEffect } from "react"
-
+import '../styles/Toggle.scss'
 
 
 const Toggle = () => {
