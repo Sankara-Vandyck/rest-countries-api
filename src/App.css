@@ -12,3 +12,9 @@ body{
     font-style: normal;
     width: 100%;
 }
+
+.filters{
+    display: flex;
+    justify-content: space-between;
+    margin: 48px 80px 48px 80px;
+}

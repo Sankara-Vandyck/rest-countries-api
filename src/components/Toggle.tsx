@@ -1,4 +1,4 @@
-import { FaMoon, FaSun } from "react-icons/fa"
+import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 import { useState, useEffect } from "react"
 import '../styles/Toggle.scss'
 
@@ -21,8 +21,8 @@ const Toggle = () => {
 
     return ( 
         <button className="toggle-button" onClick={toggleDarkMode}>
-        {darkMode ? <FaSun className="icon" /> : <FaMoon className="icon" />}
-        <span className="mode-text">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+        {darkMode ? <MdOutlineDarkMode className="icon" /> : <MdDarkMode className="icon" />}
+        <span className="mode-text">{darkMode ? 'Dark Mode' : 'Light Mode'}</span>
       </button>
     )
 }

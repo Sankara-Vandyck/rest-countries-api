@@ -1,5 +1,4 @@
 import { useState } from "react";
-import CountryData from "../components/CountryData";
 import FilterDropdown from "../components/FilterDropdown";
 import SearchInput from "../components/SearchInput";
 import "../styles/HomePage.scss";
@@ -13,9 +12,6 @@ const HomePage = () => {
         <div className="home-element">
           <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <FilterDropdown regionFilter={regionFilter} setRegionFilter={setRegionFilter} />
-        </div>
-        <div className="country-home-data">
-          <CountryData searchTerm={searchTerm} regionFilter={regionFilter} />
         </div>
       </div>
     );

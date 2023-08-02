@@ -17,7 +17,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({ regionFilter, setRegion
         <select value={regionFilter} onChange={handleFilterChange}>
           <option value="all" className='region'>Filter by region</option>
           <option value="africa">Africa</option>
-          <option value="americas">America</option>
+          <option value="americas">Americas</option>
           <option value="asia">Asia</option>
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>

@@ -1,30 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Country } from '../components/CountryData';
+import React from 'react';
+import '../styles/CountryList.scss';
+import { Country } from './CountryData';
 
 interface CountryListProps {
   country: Country;
 }
 
 const CountryList: React.FC<CountryListProps> = ({ country }) => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading delay to show a loading message
-    const delay = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
-    return () => {
-      clearTimeout(delay);
-    };
-  }, []);
-
-  if (loading) {
-    return <div className='loading'>Loading country data...</div>;
-  }
 
   return (
-    <div className="country-list-container">
+    <div className="country-container">
       <div className="country-flag">
         <img src={country.flag} alt="Flag" className="flag-icon" />
       </div>

@@ -5,5 +5,16 @@
     background: var(--white);
     border: none;
     gap: 8px;
+    cursor: pointer;
     margin: 29px 80px 29px 0;
+
+    .icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    .dark-mode body{
+        background: black;
+        color: var(--light-mode-text);
+      }
 }

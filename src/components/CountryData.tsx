@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import CountryList from "../components/CountryList"
+import CountryList from "../components/CountryList";
+import '../styles/CountryData.scss';
 
 export interface Country {
   name: string;
@@ -9,7 +10,6 @@ export interface Country {
   flag: string;
   population: number;
   capital: string;
- 
 }
 
 interface CountryDataProps {
@@ -28,7 +28,6 @@ const CountryData: React.FC<CountryDataProps> = ({ searchTerm, regionFilter }) =
       .then(response => {
         setCountries(response.data);
         setLoading(false);
-        console.log(response.data);
       })
       .catch(error => {
         console.log(error);
