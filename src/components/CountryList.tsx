@@ -17,7 +17,7 @@ const CountryList: React.FC<CountryListProps> = ({ country }) => {
         <h2>{country.name}</h2>
         <div className="card-title">
           <p>
-            <strong>Population:</strong> <span>{country.population}</span>
+            <strong>Population:</strong> <span>{country.population.toLocaleString()}</span>
           </p>
           <p>
             <strong>Region:</strong> <span>{country.region}</span>

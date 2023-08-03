@@ -1,7 +1,7 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import CountryList from "../components/CountryList";
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import CountryList from '../components/CountryList';
 import '../styles/CountryData.scss';
 
 export interface Country {
@@ -22,20 +22,19 @@ const CountryData: React.FC<CountryDataProps> = ({ searchTerm, regionFilter }) =
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch country data from the REST Countries API
     axios
       .get<Country[]>('https://restcountries.com/v2/all')
-      .then(response => {
+      .then((response) => {
         setCountries(response.data);
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
         setLoading(false);
       });
-  }, [searchTerm, regionFilter]);
+  }, []);
 
-  const filteredCountries = countries.filter(country => {
+  const filteredCountries = countries.filter((country) => {
     const countryName = country.name.toLowerCase();
     const search = searchTerm.toLowerCase();
     const region = regionFilter.toLowerCase();
@@ -48,14 +47,14 @@ const CountryData: React.FC<CountryDataProps> = ({ searchTerm, regionFilter }) =
   }
 
   return (
-    <div className="country-grid">
-      {filteredCountries.map(country => (
+    <div className='country-grid'>
+      {filteredCountries.map((country) => (
         <Link className='link' to={`/country/${country.name}`} key={country.name}>
-          <CountryList country={country} />
+          <CountryList key={country.name} country={country} />
         </Link>
       ))}
     </div>
   );
-}
+};
 
 export default CountryData;
