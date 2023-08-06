@@ -10,7 +10,7 @@
 .country-card-element{
     display: flex;
     flex-direction: column;
-    margin: 80px 80px ;
+    margin: 40px 80px ;
 }
 
 .country-flags-content{
@@ -116,10 +116,3 @@ p{
     line-height: normal;
 }
 
-.loading{
-    display: flex;
-    justify-content:center;
-    font-size: 24px;
-    color:  hsl(0, 95%, 47%);
-    font-weight: 600;
-}

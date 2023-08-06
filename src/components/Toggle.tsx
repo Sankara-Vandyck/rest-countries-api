@@ -1,14 +1,22 @@
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 import { useState, useEffect } from "react"
 import '../styles/Toggle.scss'
+import '../styles/App.scss'
 
 
 const Toggle = () => {
-    const storedDarkMode = localStorage.getItem('darkMode');
-    const [darkMode, setDarkMode] = useState(storedDarkMode ? JSON.parse(storedDarkMode) : false);
-    const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
-      };
+  const storedDarkMode = localStorage.getItem("darkMode");
+  const [darkMode, setDarkMode] = useState(
+    storedDarkMode ? JSON.parse(storedDarkMode) : false
+  );
+
+  const toggleDarkMode = () => {
+    setDarkMode((prevMode: boolean) => {
+      const newMode = !prevMode;
+      localStorage.setItem("darkMode", JSON.stringify(newMode));
+      return newMode;
+    });
+  };
 
       useEffect(() => {
         localStorage.setItem('darkMode', JSON.stringify(darkMode));
@@ -20,10 +28,12 @@ const Toggle = () => {
         }, [darkMode]);
 
     return ( 
-        <button className="toggle-button" onClick={toggleDarkMode}>
+      <div className={`app-made ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <button className="toggle-button" onClick={toggleDarkMode}>
         {darkMode ? <MdOutlineDarkMode className="icon" /> : <MdDarkMode className="icon" />}
-        <span className="mode-text">{darkMode ? 'Dark Mode' : 'Light Mode'}</span>
+        <span className="mode-text">{darkMode ? "Dark Mode" : "Light Mode"}</span>
       </button>
+    </div>
     )
 }
  

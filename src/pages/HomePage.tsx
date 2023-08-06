@@ -3,6 +3,7 @@ import FilterDropdown from "../components/FilterDropdown";
 import SearchInput from "../components/SearchInput";
 import "../styles/HomePage.scss";
 import "../styles/Toggle.scss"
+import "../styles/App.scss"
 import CountryCard from "../components/CountryData";
 
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/FilterDropdown.scss';
+import '../styles/App.scss'
+import '../styles/Toggle.scss'
 
 interface FilterDropdownProps {
   regionFilter: string;

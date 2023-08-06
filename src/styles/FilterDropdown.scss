@@ -14,6 +14,7 @@
        display: flex;
        width: 100%;
        cursor: pointer;
+       background: #fff;
        border: none;
         &:focus {
             outline: none;
@@ -26,11 +27,15 @@
         height: 50px;
         width: 200px;
         border-radius: 5px;
-        background: #fff;
+        // background: #cb0404;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
+    }
+
+    .dark-mode select{
+        background: #2B3844;
     }
 
    
