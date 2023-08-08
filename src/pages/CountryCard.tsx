@@ -122,9 +122,9 @@ const CountryCard: React.FC = () => {
                 </div>
               </div>
               <div className="border-countries" >
-                <div style={{display: 'flex',flexDirection: 'row', width: '68rem',gap: '1rem'}}>
+                <div className="allCountries">
                   <strong>Border Countries:</strong>{" "}
-                  <div className="border-list" style={{display: 'flex', flexDirection: 'column', width: '230px',gap: '0.6rem'}}>
+                  <div className="border-list">
                     {borderCountries.length > 0
                       ? borderCountries.map((borderCountry) => (
                           <Link

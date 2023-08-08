@@ -40,8 +40,14 @@
     color: #FFF;
   }
 
-  .dark-mode input{
+  .dark-mode .search input{
     color: #FFF;
   }
 
+  @media (max-width: 767px){
+    .search{
+      width: 343px;
+      height: 48px;
+    }
+  }
   
