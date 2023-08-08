@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import CountryList from '../components/CountryList';
+import CountryList from '../pages/CountryList';
 import '../styles/CountryData.scss';
 
 export interface Country {

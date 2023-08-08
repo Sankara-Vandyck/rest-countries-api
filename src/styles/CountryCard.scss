@@ -1,7 +1,6 @@
 .country-card-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -10,11 +9,11 @@
 .country-card-element{
     display: flex;
     flex-direction: column;
-    margin: 40px 80px ;
+    padding: 50px 80px ;
 }
 
 .country-flags-content{
-    display: flex;
+    // display: flex;
     height: 100%; 
 }
 
@@ -22,11 +21,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 559.715px;
+    width: 759.715px;
     height: 483.169px;
     flex-shrink: 0;
     object-fit: cover;
-    background-size: cover;
+   
+   background-size: contain;
     background-position: 100%;
     border-radius: 5px;
 }
@@ -34,7 +34,7 @@
 .country-details{
     display: flex;
     width: 100%;
-    gap: 120px;
+    gap: 50px;
     height: 100%;
     margin-top: 24px;
 }
@@ -42,8 +42,8 @@
 .mother-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
+    padding-top: 40px;
+    width: 450px;
 }
 
 .card-content{
@@ -55,15 +55,32 @@
 .native-name{
     display: flex;
     flex-direction: column; 
+    margin-top: 25px;
+    gap: 10px;
+    width: 230px;
 }
 
 .domain-level{
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
 }
 
 .border-countries{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
     margin-top: 40px;
+}
+
+.border-countries strong {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
 }
 
 .back-button{
@@ -76,10 +93,11 @@
     color: #111517;
 }
 
-h1{
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 20px;
+h2{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
 }
 
 .toggle-btn{
@@ -92,21 +110,40 @@ h1{
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
 }
 
+.arrow-left{
+    width: 20px;
+    height: 20px;
+    // flex-shrink: 0;
+}
+
 p{
     display: flex;
     align-items: center;
     gap: 10px;
+    
 }
 
+strong{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+span, h1{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 32px;
+}
 .border-country-link{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    // align-items: center;
     text-decoration: none;
     color: #111517;
     font-size: 14px;
-    width: 96px;
-    height: 28px;
+    width: 180px;
+    height: 45px;
     flex-shrink: 0;
     font-weight: 300;
     border-radius: 2px;
@@ -114,5 +151,38 @@ p{
     background: #FFF;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.10);    
     line-height: normal;
+}
+
+.dark-mode .country-card-container{
+    background: #202C36;
+}
+
+.dark-mode .toggle-btn{
+    color: #FFF;
+    background: #2B3844;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
+}
+
+.dark-mode .arrow-left{
+    color: #FFF;
+}
+
+.dark-mode h2{
+    color: #FFF;
+}
+
+.dark-mode span{
+    color: #FFF;
+}
+
+.dark-mode .border-country-link{
+    border-radius: 2px;
+    background: #2B3844;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.10);
+    color: #FFF;
+}
+
+.dark-mode .border-list{
+    color: #FFF;
 }
 

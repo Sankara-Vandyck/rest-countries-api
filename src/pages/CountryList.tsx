@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/CountryList.scss';
 import '../styles/App.scss'
-import { Country } from './CountryData';
+import { Country } from '../components/CountryData';
 
 interface CountryListProps {
   country: Country;
@@ -10,7 +10,9 @@ interface CountryListProps {
 const CountryList: React.FC<CountryListProps> = ({ country }) => {
 
   return (
+    <>
     <div className="country-container">
+      
       <div className="country-flag">
         <img src={country.flag} alt="Flag" className="flag-icon" />
       </div>
@@ -29,6 +31,7 @@ const CountryList: React.FC<CountryListProps> = ({ country }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

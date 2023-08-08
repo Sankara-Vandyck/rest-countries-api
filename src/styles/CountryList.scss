@@ -3,9 +3,9 @@
     flex-direction: column;
     background: #FFF;
     box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
-    width: 100%;
-    height: 400px;
-    gap: 18px;
+    width: 267px;
+    height: 436px;
+    gap: 25px;
     cursor: pointer;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -13,30 +13,33 @@
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 
-    .country-flag{
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .country-flag {
       width: 100%;
-      height: 180px;
+      // height: 100%;
+      
     }
-
+    
     .flag-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-top: 5px;
-        background-size: cover;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 267px;
+      height: 160px;    
+      object-fit: cover; 
+      background-size: cover;
+      background-position: center;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      box-sizing: border-box; 
+    }
+    
 
       .card-body{
-        width: 200px;
-        margin: 0 0 0 35px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        width: 220px;
+        margin: 0px 0px 0px 35px;
       }
 
       .card-body h2{
@@ -50,11 +53,34 @@
     .card-title{
       display: flex;
       flex-direction: column;
+      gap: 10px;
       color: #111517;
       text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 300;
       line-height: 16px;
       letter-spacing: 1px;
   }
+
+  strong{
+    color: #111517;
+    font-weight: 600;
+  }
+}
+
+  .dark-mode .country-container{
+    background: #2B3844;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+}
+
+.dark-mode .card-body h2{
+  color: #FFF;
+}
+
+.dark-mode .card-title{
+  color: #FFF;
+}
+
+.dark-mode strong{
+  color: #FFF;
 }

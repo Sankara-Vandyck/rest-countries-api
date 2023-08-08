@@ -6,9 +6,7 @@ import '../styles/App.scss'
 
 const Toggle = () => {
   const storedDarkMode = localStorage.getItem("darkMode");
-  const [darkMode, setDarkMode] = useState(
-    storedDarkMode ? JSON.parse(storedDarkMode) : false
-  );
+  const [darkMode, setDarkMode] = useState(storedDarkMode ? JSON.parse(storedDarkMode) : false);
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode: boolean) => {
@@ -28,7 +26,7 @@ const Toggle = () => {
         }, [darkMode]);
 
     return ( 
-      <div className={`app-made ${darkMode ? "dark-mode" : "light-mode"}`}>
+      <div className={`app-made ${darkMode ? "dark-toggle" : "light-toggle"}`}>
       <button className="toggle-button" onClick={toggleDarkMode}>
         {darkMode ? <MdOutlineDarkMode className="icon" /> : <MdDarkMode className="icon" />}
         <span className="mode-text">{darkMode ? "Dark Mode" : "Light Mode"}</span>

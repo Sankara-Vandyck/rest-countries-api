@@ -13,4 +13,16 @@
         height: 20px;
     }
 
+    .app-mode{
+        background: red;
+    }
+
+}
+
+.dark-mode .icon{
+    color: #ffffff;
+}
+
+.dark-mode .mode-text{
+    color: #ffffff;
 }

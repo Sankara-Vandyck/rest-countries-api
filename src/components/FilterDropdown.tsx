@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/FilterDropdown.scss';
-import '../styles/App.scss'
-import '../styles/Toggle.scss'
+import '../styles/App.scss';
 
 interface FilterDropdownProps {
   regionFilter: string;
@@ -10,10 +9,19 @@ interface FilterDropdownProps {
 
 const FilterDropdown: React.FC<FilterDropdownProps> = ({ regionFilter, setRegionFilter }) => {
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setRegionFilter(e.target.value);
+    const selectedRegion = e.target.value;
+    setRegionFilter(selectedRegion);
+    localStorage.setItem('regionFilter', selectedRegion);
   };
 
-  return ( 
+  useEffect(() => {
+    const savedRegionFilter = localStorage.getItem('regionFilter');
+    if (savedRegionFilter) {
+      setRegionFilter(savedRegionFilter);
+    }
+  }, [setRegionFilter]);
+
+  return (
     <div className="filter-dropdown">
       <div className="dropdown-container">
         <select value={regionFilter} onChange={handleFilterChange}>
