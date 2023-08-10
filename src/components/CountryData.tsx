@@ -37,7 +37,7 @@ const CountryData: React.FC<CountryDataProps> = ({
           console.log(error);
           setLoading(false);
         }
-      }, 2000);
+      }, 1000);
     };
 
     fetchData();
