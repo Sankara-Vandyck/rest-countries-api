@@ -72,8 +72,7 @@
 
 .country-border-name {
   display: flex;
-  width: 50%;
-  height: 70%;
+  gap: 15px;
 }
 
 .back-button {
@@ -146,6 +145,8 @@ h1 {
 .allCountries {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  gap: 10px;
 }
 
 .border-list {
