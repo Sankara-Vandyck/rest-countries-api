@@ -1,4 +1,3 @@
-import React from "react";
 import { FiSearch } from "react-icons/fi";
 import "../styles/SearchInput.scss";
 
@@ -7,10 +6,7 @@ interface SearchInputProps {
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({
-  searchTerm,
-  setSearchTerm,
-}) => {
+const SearchInput: React.FC<SearchInputProps> = ({ searchTerm, setSearchTerm }) => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };

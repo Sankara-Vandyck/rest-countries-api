@@ -128,18 +128,19 @@ h1 {
 }
 
 .border-country-link {
-  display: flex;
-  text-decoration: none;
-  color: #111517;
-  font-size: 14px;
-  padding: 8px 1rem;
-  flex-shrink: 0;
-  font-weight: 300;
-  border-radius: 2px;
+  display: inline-block;
+  // width: 6rem;
+  height: 1.75rem;
+  border-radius: 0.125rem;
   border: 0px solid #979797;
-  background: #fff;
-  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
-  line-height: normal;
+  background: #FFF;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.10);
+  margin-right: 0.5rem; 
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem; 
+  text-align: center;
+  text-decoration: none;
+  color: #000;
 }
 
 .allCountries {
@@ -154,42 +155,49 @@ h1 {
   place-items: center;
 }
 
-.dark-mode .country-card-container {
+.dark-mode {
+.country-card-container {
   background: #202c36;
+
 }
 
-.dark-mode .toggle-btn {
+.toggle-btn {
   color: #fff;
   background: #2b3844;
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
 }
 
-.dark-mode .arrow-left {
+.arrow-left {
   color: #fff;
 }
 
-.dark-mode h2 {
+h2 {
   color: #fff;
 }
 
-.dark-mode span {
+span {
   color: #fff;
 }
 
-.dark-mode .border-country-link {
+.border-country-link {
   border-radius: 2px;
   background: #2b3844;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
   color: #fff;
 }
 
-.dark-mode .border-list {
+.border-list {
   color: #fff;
+}
 }
 
 @media only screen and (max-width: 480px) and (min-width: 375px) {
   .mother-container {
     width: 275px;
+  }
+
+  .toggle-btn{
+    margin: 0px 9px;
   }
 
   .flag-img {
@@ -210,7 +218,7 @@ h1 {
   .country-details {
     display: grid;
     grid-template-columns: 1fr;
-    place-items: center;
+    padding: 20px 9px;
     width: 340px;
   }
 

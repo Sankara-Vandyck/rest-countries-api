@@ -17,6 +17,8 @@ header {
     font-weight: 800;
     cursor: pointer;
     text-decoration: none;
+
+    
   }
 
   .title-link {
@@ -24,6 +26,10 @@ header {
     color: inherit;
     cursor: pointer;
   }
+  
+}
+.dark-mode h1{
+  color: #fff;
 }
 
 @media only screen and (max-width: 480px) and (min-width: 375px) {
