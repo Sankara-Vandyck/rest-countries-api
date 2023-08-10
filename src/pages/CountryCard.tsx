@@ -40,12 +40,10 @@ const CountryCard: React.FC = () => {
           );
           setBorderCountries(borderResponse.data);
         }
-
-        // Introduce a 2-second delay before showing the content
         setTimeout(() => {
           setLoading(false);
           setShowContent(true);
-        }, 2000);
+        }, 1000);
       } catch (error) {
         console.error(error);
         setLoading(false);
