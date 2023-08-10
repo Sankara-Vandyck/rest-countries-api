@@ -1,0 +1,40 @@
+.toggle-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  border: none;
+  gap: 8px;
+  cursor: pointer;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.dark-mode .icon {
+  color: #ffffff;
+}
+
+.mode-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dark-mode .mode-text {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 375px) {
+  .mode-text {
+    font-size: 12px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+}
