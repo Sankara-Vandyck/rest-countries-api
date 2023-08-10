@@ -150,7 +150,7 @@ const CountryCard: React.FC = () => {
                           {borderCountry.name}
                         </Link>
                       ))
-                    : "No border country found"}
+                    : "No border country"}
                 </div>
               </div>
             </div>
