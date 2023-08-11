@@ -31,23 +31,22 @@
   }
 }
 
-.dark-mode{
+.dark-mode {
+  .search {
+    background: #2b3844;
+  }
 
- .search {
-  background: #2b3844;
-}
+  .search-icon {
+    color: #fff;
+  }
 
-.search-icon {
-  color: #fff;
-}
+  .search input {
+    color: #fff;
+  }
 
-.search input {
-  color: #fff;
-}
-
- ::placeholder{
-  color: #fff;
-}
+  ::placeholder {
+    color: #fff;
+  }
 }
 
 @media only screen and (max-width: 480px) and (min-width: 375px) {

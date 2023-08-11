@@ -11,7 +11,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   setRegionFilter,
 }) => {
   const options = [
-    { value: "all", label: "Filter by Region" }, 
+    { value: "all", label: "Filter by Region" },
     { value: "Africa", label: "Africa" },
     { value: "Americas", label: "Americas" },
     { value: "Asia", label: "Asia" },
@@ -35,13 +35,13 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   return (
     <div className="filter-dropdown">
       <div className="select-btn">
-      <select value={regionFilter} onChange={handleFilterChange}>
-        {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
+        <select value={regionFilter} onChange={handleFilterChange}>
+          {options.map((option, index) => (
+            <option key={index} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );
