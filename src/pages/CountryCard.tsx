@@ -22,7 +22,7 @@ const CountryCard: React.FC = () => {
   const [country, setCountry] = useState<Country | null>(null);
   const [borderCountries, setBorderCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false); // New state to control content display
+  const [showContent, setShowContent] = useState(false); 
   const { countryName } = useParams<{ countryName: string }>();
 
   useEffect(() => {
@@ -143,7 +143,7 @@ const CountryCard: React.FC = () => {
                           key={borderCountry.name}
                           to={`/country/${borderCountry.name}`}
                           className="border-country-link"
-                          style={{ paddingLeft: "0.5rem" }}
+                          // style={{ paddingLeft: "0.5rem" }}
                         >
                           {borderCountry.name}
                         </Link>

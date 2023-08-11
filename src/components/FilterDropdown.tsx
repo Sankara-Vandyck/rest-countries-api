@@ -34,13 +34,15 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 
   return (
     <div className="filter-dropdown">
-      <select className="custom-select" value={regionFilter} onChange={handleFilterChange}>
+      <div className="select-btn">
+      <select value={regionFilter} onChange={handleFilterChange}>
         {options.map((option, index) => (
           <option key={index} value={option.value}>
             {option.label}
           </option>
         ))}
       </select>
+      </div>
     </div>
   );
 };
