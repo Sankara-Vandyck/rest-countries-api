@@ -13,15 +13,15 @@ const HomePage = () => {
 
   return (
     <div className="home-container">
-      
-        <div className="filters">
-          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-          <FilterDropdown regionFilter={regionFilter} setRegionFilter={setRegionFilter}/>
-        </div>
-        <div>
-          <CountryCard searchTerm={searchTerm} regionFilter={regionFilter} />
-        </div>
+
+      <div className="filters">
+        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <FilterDropdown regionFilter={regionFilter} setRegionFilter={setRegionFilter} />
       </div>
+      <div>
+        <CountryCard searchTerm={searchTerm} regionFilter={regionFilter} />
+      </div>
+    </div>
   );
 };
 
