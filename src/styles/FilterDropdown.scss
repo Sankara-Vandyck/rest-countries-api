@@ -19,6 +19,21 @@
     line-height: 16px;
     justify-content: space-between;
     margin: 15px 22px;
+
+    .dropdown-icon {
+      transition: transform 0.2s;
+      -webkit-transition: transform 0.2s;
+      -moz-transition: transform 0.2s;
+      -ms-transition: transform 0.2s;
+      -o-transition: transform 0.2s;
+      &.open{
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+}
+    }
   }
 
   .dropdown-options {
@@ -32,6 +47,7 @@
     background: #fff;
     padding: 16px 16px 16px 24px;
     box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
+
   }
 }
 

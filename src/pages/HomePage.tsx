@@ -6,10 +6,7 @@ import CountryCard from "../components/CountryData";
 
 const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [regionFilter, setRegionFilter] = useState(() => {
-    const savedRegionFilter = localStorage.getItem("regionFilter");
-    return savedRegionFilter || "all";
-  });
+  const [regionFilter, setRegionFilter] = useState("all");
 
   return (
     <div className="home-container">
