@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import '../styles/FilterDropdown.scss'
+import React, { useState } from "react";
+import { FaAngleUp, FaAngleDown } from "react-icons/fa";
+import "../styles/FilterDropdown.scss";
 
 interface FilterDropdownProps {
   regionFilter: string;
@@ -19,30 +20,42 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
     { value: "Oceania", label: "Oceania" },
   ];
 
-  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedRegion = e.target.value;
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleFilterChange = (selectedRegion: string) => {
     setRegionFilter(selectedRegion);
     localStorage.setItem("regionFilter", selectedRegion);
+    setIsDropdownOpen(false);
   };
 
-  useEffect(() => {
-    const savedRegionFilter = localStorage.getItem("regionFilter");
-    if (savedRegionFilter) {
-      setRegionFilter(savedRegionFilter);
-    }
-  }, [setRegionFilter]);
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState);
+  };
 
   return (
-    <div className="filter-dropdown">
-      <div className="select-btn">
-        <select value={regionFilter} onChange={handleFilterChange}>
-          {options.map((option, index) => (
-            <option key={index} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
+    <div className="dropdown-container">
+      <div
+        className={`dropdown-header ${isDropdownOpen ? "open" : ""}`}
+        onClick={toggleDropdown}
+      >
+        <span>{regionFilter === "all" ? "Filter by Region" : regionFilter}</span>
+        <span className="dropdown-icon">
+          {isDropdownOpen ? <FaAngleUp /> : <FaAngleDown />}
+        </span>
       </div>
+      {isDropdownOpen && (
+        <div className="dropdown-options">
+          {options.map((option) => (
+            <div
+              key={option.value}
+              onClick={() => handleFilterChange(option.value)}
+              className="dropdown-option"
+            >
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
