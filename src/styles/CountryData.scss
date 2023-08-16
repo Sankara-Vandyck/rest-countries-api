@@ -57,7 +57,7 @@
   color: #fff;
 }
 
-@media only screen and (max-width: 480px) and (min-width: 375px) {
+@media only screen and (max-width: 480px) and (min-width: 320px) {
   .country-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
