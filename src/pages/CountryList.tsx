@@ -8,7 +8,6 @@ interface CountryListProps {
 
 const CountryList: React.FC<CountryListProps> = ({ country }) => {
   return (
-    <>
       <div className="country-container">
         <div className="country-flag">
           <img src={country.flag} alt="Flag" className="flag-icon" />
@@ -29,7 +28,7 @@ const CountryList: React.FC<CountryListProps> = ({ country }) => {
           </div>
         </div>
       </div>
-    </>
+   
   );
 };
 

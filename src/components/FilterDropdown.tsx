@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
 import "../styles/FilterDropdown.scss";
 
@@ -11,21 +11,28 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   regionFilter,
   setRegionFilter,
 }) => {
-  const options = [
-    { value: "all", label: "Filter by Region" },
-    { value: "Africa", label: "Africa" },
-    { value: "Americas", label: "Americas" },
-    { value: "Asia", label: "Asia" },
-    { value: "Europe", label: "Europe" },
-    { value: "Oceania", label: "Oceania" },
+  const regionMappings: { [key: string]: string } = {
+    "all": "Filter by Region",
+    "Americas": "America",
+  };
+
+  const regions = [
+    "all", "Africa", "Americas", "Asia", "Europe", "Oceania",
   ];
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  useEffect(() => {
+    const storedRegionFilter = localStorage.getItem("regionFilter");
+    if (storedRegionFilter) {
+      setRegionFilter(storedRegionFilter);
+    }
+  },);
+
   const handleFilterChange = (selectedRegion: string) => {
     setRegionFilter(selectedRegion);
-    localStorage.setItem("regionFilter", selectedRegion);
     setIsDropdownOpen(false);
+    localStorage.setItem("regionFilter", selectedRegion);
   };
 
   const toggleDropdown = () => {
@@ -38,20 +45,20 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
         className={`dropdown-header ${isDropdownOpen ? "open" : "close"}`}
         onClick={toggleDropdown}
       >
-        <span>{regionFilter === "all" ? "Filter by Region" : regionFilter}</span>
+        <span>{regionMappings[regionFilter] || regionFilter}</span>
         <span className="dropdown-icon">
           {isDropdownOpen ? <FaAngleDown /> : <FaAngleUp />}
         </span>
       </div>
       {isDropdownOpen && (
         <div className="dropdown-options">
-          {options.map((option) => (
+          {regions.map((region) => (
             <div
-              key={option.value}
-              onClick={() => handleFilterChange(option.value)}
+              key={region}
+              onClick={() => handleFilterChange(region)}
               className="dropdown-option"
             >
-              {option.label}
+              {regionMappings[region] || region}
             </div>
           ))}
         </div>
