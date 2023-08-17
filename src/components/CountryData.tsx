@@ -1,3 +1,5 @@
+// CountryData.tsx
+
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -17,27 +19,22 @@ interface CountryDataProps {
   regionFilter: string;
 }
 
-const CountryData: React.FC<CountryDataProps> = ({
-  searchTerm,
-  regionFilter,
-}) => {
+const CountryData: React.FC<CountryDataProps> = ({ searchTerm, regionFilter }) => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      setTimeout(async () => {
-        try {
-          const response = await axios.get<Country[]>(
-            "https://restcountries.com/v2/all"
-          );
-          setCountries(response.data);
-          setLoading(false);
-        } catch (error) {
-          console.log(error);
-          setLoading(false);
-        }
-      }, 1000);
+      try {
+        const response = await axios.get<Country[]>(
+          "https://restcountries.com/v2/all"
+        );
+        setCountries(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setLoading(false);
+      }
     };
 
     fetchData();
@@ -50,8 +47,7 @@ const CountryData: React.FC<CountryDataProps> = ({
 
     return (
       countryName.includes(search) &&
-      (region === "all" ||
-        (country.region && country.region.toLowerCase() === region))
+      (regionFilter === "all" || (country.region && country.region.toLowerCase() === region))
     );
   });
 
@@ -64,16 +60,14 @@ const CountryData: React.FC<CountryDataProps> = ({
   }
 
   return (
-    <div className="country-grid">
-      {filteredCountries.map((country) => (
-        <Link
-          className="link"
-          to={`/country/${country.name}`}
-          key={country.name}
-        >
-          <CountryList key={country.name} country={country} />
-        </Link>
-      ))}
+    <div>
+      <div className="country-grid">
+        {filteredCountries.map((country) => (
+          <Link className="link" to={`/country/${country.name}`} key={country.name}>
+            <CountryList key={country.name} country={country} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

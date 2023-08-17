@@ -51,7 +51,13 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 67px;
   padding: 48px 80px;
+  transition: opacity 0.8s ease-in;
+  -webkit-transition: opacity 0.8s ease-in;
+  -moz-transition: opacity 0.8s ease-in;
+  -ms-transition: opacity 0.8s ease-in;
+  -o-transition: opacity 0.8s ease-in;
 }
+
 
 .dark-mode .loading {
   color: #fff;

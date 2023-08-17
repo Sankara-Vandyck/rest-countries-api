@@ -24,9 +24,9 @@ const DarkModeToggle = () => {
     <div className={`dark-mode-toggle ${darkMode ? "dark-toggle" : "light-toggle"}`}>
       <button className="toggle-button" onClick={toggleDarkMode}>
         {darkMode ? (
-          <MdOutlineDarkMode className="icon" />
-        ) : (
           <MdDarkMode className="icon" />
+        ) : (
+          <MdOutlineDarkMode className="icon" />
         )}
         <span className="mode-text">Dark Mode</span>
       </button>
