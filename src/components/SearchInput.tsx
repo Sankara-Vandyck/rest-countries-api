@@ -1,12 +1,11 @@
+import React from "react";
 import { FiSearch } from "react-icons/fi";
+import { useAppContext } from "../components/AppContext"; 
 import "../styles/SearchInput.scss";
 
-interface SearchInputProps {
-  searchTerm: string;
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-}
+const SearchInput: React.FC = () => {
+  const { searchTerm, setSearchTerm } = useAppContext(); 
 
-const SearchInput: React.FC<SearchInputProps> = ({ searchTerm, setSearchTerm }) => {
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };
