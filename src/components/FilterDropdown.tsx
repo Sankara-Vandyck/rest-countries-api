@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
-import { useAppContext } from "../components/AppContext"; // Import the context hook
+import { useAppContext } from "../components/AppContext";
 import "../styles/FilterDropdown.scss";
 
 const FilterDropdown: React.FC = () => {
-  const { regionFilter, setRegionFilter } = useAppContext(); // Access state from the context
+  const { regionFilter, setRegionFilter } = useAppContext();
 
   const regionMappings: { [key: string]: string } = {
     "all": "Filter by Region",
