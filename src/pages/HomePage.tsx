@@ -1,18 +1,19 @@
-import React, { useState } from "react";
-import FilterDropdown from "../components/FilterDropdown";
-import SearchInput from "../components/SearchInput";
+import React from "react";
+import { useAppContext } from "../components/AppContext";
 import CountryData from "../components/CountryData";
-import "../styles/HomePage.scss";
+import SearchInput from "../components/SearchInput";
+import FilterDropdown from "../components/FilterDropdown";
+import '../styles/HomePage.scss'
 
-const HomePage = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [regionFilter, setRegionFilter] = useState("all");
+
+const HomePage: React.FC = () => {
+  const { searchTerm,  regionFilter } = useAppContext();
 
   return (
     <div className="home-container">
       <div className="filters">
-        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <FilterDropdown regionFilter={regionFilter} setRegionFilter={setRegionFilter} />
+        <SearchInput />
+        <FilterDropdown />
       </div>
       <div>
         <CountryData searchTerm={searchTerm} regionFilter={regionFilter} />

@@ -87,31 +87,32 @@ const CountryCard: React.FC = () => {
 
             <div className="card-content">
               <div className="native-name">
-                <p>
+                <div>
                   <strong>Native Name:</strong>
                   <span>{country.nativeName}</span>
-                </p>
-                <p>
+                </div>
+                <div>
                   <strong>Population:</strong>
                   <span>{country.population.toLocaleString()}</span>
-                </p>
-                <p>
+                </div>
+                <div>
                   <strong>Region:</strong> <span>{country.region}</span>
-                </p>
-                <p>
+                </div>
+                <div>
                   <strong>Sub Region:</strong>
                   <span>{country.subregion}</span>
-                </p>
-                <p>
-                  <strong>Capital:</strong> <span>{country.capital}</span>
-                </p>
+                </div>
+                <div>
+                  <strong>Capital:</strong> <span className="country-capitals">{country.capital}</span>
+                  
+                </div>
               </div>
               <div className="domain-level">
-                <p>
+                <div>
                   <strong>Top Level Domain:</strong>
                   <span>{country.topLevelDomain}</span>
-                </p>
-                <p>
+                </div>
+                <div>
                   <strong>Currencies:</strong>
                   <h1>
                     {" "}
@@ -119,8 +120,8 @@ const CountryCard: React.FC = () => {
                       .map((currency) => currency.code)
                       .join(", ")}
                   </h1>
-                </p>
-                <p>
+                </div>
+                <div>
                   <strong>Languages:</strong>
                   <h1>
                     {" "}
@@ -128,7 +129,7 @@ const CountryCard: React.FC = () => {
                       .map((language) => language.name)
                       .join(", ")}
                   </h1>
-                </p>
+                </div>
               </div>
             </div>
             <div className="border-countries">

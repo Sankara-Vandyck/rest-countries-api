@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleUp, FaAngleDown } from "react-icons/fa";
+import { useAppContext } from "../components/AppContext"; // Import the context hook
 import "../styles/FilterDropdown.scss";
 
-interface FilterDropdownProps {
-  regionFilter: string;
-  setRegionFilter: React.Dispatch<React.SetStateAction<string>>;
-}
+const FilterDropdown: React.FC = () => {
+  const { regionFilter, setRegionFilter } = useAppContext(); // Access state from the context
 
-const FilterDropdown: React.FC<FilterDropdownProps> = ({
-  regionFilter,
-  setRegionFilter,
-}) => {
   const regionMappings: { [key: string]: string } = {
     "all": "Filter by Region",
     "Americas": "America",
@@ -27,7 +22,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
     if (storedRegionFilter) {
       setRegionFilter(storedRegionFilter);
     }
-  },);
+  }, [setRegionFilter]);
 
   const handleFilterChange = (selectedRegion: string) => {
     setRegionFilter(selectedRegion);

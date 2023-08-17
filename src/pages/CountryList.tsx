@@ -23,7 +23,7 @@ const CountryList: React.FC<CountryListProps> = ({ country }) => {
               <strong>Region:</strong> <span>{country.region}</span>
             </p>
             <p>
-              <strong>Capital:</strong> <span> {country.capital}</span>
+              <strong>Capital:</strong> <span className="country-capitals"> {country.capital}</span>
             </p>
           </div>
         </div>
