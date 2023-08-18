@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import axios from "axios";
 import "../styles/CountryCard.scss";
@@ -22,8 +22,9 @@ const CountryCard: React.FC = () => {
   const [country, setCountry] = useState<Country | null>(null);
   const [borderCountries, setBorderCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false); 
+  const [showContent, setShowContent] = useState(false);
   const { countryName } = useParams<{ countryName: string }>();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -73,10 +74,12 @@ const CountryCard: React.FC = () => {
     <div className="country-card-container">
       <div className="country-card-element">
         <div className="toggle-btn">
-          <Link to="/" className="back-button">
+          <button
+            className="back-button"
+            onClick={() => navigate(-1)}>
             <FiArrowLeft className="arrow-left" />
             <h1>Back</h1>
-          </Link>
+          </button>
         </div>
         <div className="country-details">
           <div className="country-flags-content">
@@ -87,32 +90,28 @@ const CountryCard: React.FC = () => {
 
             <div className="card-content">
               <div className="native-name">
-                <div>
-                  <strong>Native Name:</strong>
-                  <span>{country.nativeName}</span>
+                <div className="country-native">
+                  <strong>Native Name:</strong> <span>{country.nativeName}</span>
                 </div>
-                <div>
-                  <strong>Population:</strong>
-                  <span>{country.population.toLocaleString()}</span>
+                <div className="country-population">
+                  <strong>Population:</strong> <span>{country.population.toLocaleString()}</span>
                 </div>
-                <div>
+                <div className="country-region">
                   <strong>Region:</strong> <span>{country.region}</span>
                 </div>
-                <div>
-                  <strong>Sub Region:</strong>
-                  <span>{country.subregion}</span>
+                <div className="country-subregion">
+                  <strong>Sub Region:</strong> <span>{country.subregion}</span>
                 </div>
-                <div>
-                  <strong>Capital:</strong> <span className="country-capitals">{country.capital}</span>
-                  
+                <div className="country-capitals">
+                  <strong>Capital:</strong> <span>{country.capital}</span>
                 </div>
               </div>
               <div className="domain-level">
-                <div>
+                <div className="country-domain">
                   <strong>Top Level Domain:</strong>
                   <span>{country.topLevelDomain}</span>
                 </div>
-                <div>
+                <div className="country-currencies">
                   <strong>Currencies:</strong>
                   <h1>
                     {" "}
@@ -121,7 +120,7 @@ const CountryCard: React.FC = () => {
                       .join(", ")}
                   </h1>
                 </div>
-                <div>
+                <div className="country-language">
                   <strong>Languages:</strong>
                   <h1>
                     {" "}
@@ -140,15 +139,13 @@ const CountryCard: React.FC = () => {
                 <div className="border-list">
                   {borderCountries.length > 0
                     ? borderCountries.map((borderCountry) => (
-                        <Link
-                          key={borderCountry.name}
-                          to={`/country/${borderCountry.name}`}
-                          className="border-country-link"
-                          // style={{ paddingLeft: "0.5rem" }}
-                        >
-                          {borderCountry.name}
-                        </Link>
-                      ))
+                      <Link
+                        key={borderCountry.name}
+                        to={`/country/${borderCountry.name}`}
+                        className="border-country-link">
+                        {borderCountry.name}
+                      </Link>
+                    ))
                     : "No border country"}
                 </div>
               </div>

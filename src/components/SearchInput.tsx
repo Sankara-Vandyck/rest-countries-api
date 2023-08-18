@@ -1,5 +1,5 @@
 import React from "react";
-import { FiSearch } from "react-icons/fi";
+import { AiOutlineSearch } from "react-icons/ai";
 import { useAppContext } from "../components/AppContext"; 
 import "../styles/SearchInput.scss";
 
@@ -12,14 +12,14 @@ const SearchInput: React.FC = () => {
 
   return (
     <div className="search">
-      <FiSearch className="search-icon" />
+      <AiOutlineSearch className="search-icon" />
       <input
         type="search"
         name="search"
         id="search"
         value={searchTerm}
         onChange={handleSearch}
-        placeholder="search for a country..."
+        placeholder="Search for a country..."
       />
     </div>
   );

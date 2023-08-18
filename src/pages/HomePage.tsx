@@ -5,9 +5,8 @@ import SearchInput from "../components/SearchInput";
 import FilterDropdown from "../components/FilterDropdown";
 import '../styles/HomePage.scss'
 
-
 const HomePage: React.FC = () => {
-  const { searchTerm,  regionFilter } = useAppContext();
+  useAppContext();
 
   return (
     <div className="home-container">
@@ -15,9 +14,9 @@ const HomePage: React.FC = () => {
         <SearchInput />
         <FilterDropdown />
       </div>
-      <div>
-        <CountryData searchTerm={searchTerm} regionFilter={regionFilter} />
-      </div>
+      <>
+        <CountryData />
+      </>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CountryList from "../pages/CountryList";
+import { useAppContext } from "../components/AppContext";
 import "../styles/CountryData.scss";
 
 export interface Country {
@@ -12,12 +13,8 @@ export interface Country {
   capital: string;
 }
 
-interface CountryDataProps {
-  searchTerm: string;
-  regionFilter: string;
-}
-
-const CountryData: React.FC<CountryDataProps> = ({ searchTerm, regionFilter }) => {
+const CountryData: React.FC = ( ) => {
+  const { searchTerm, regionFilter } = useAppContext();
   const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
 
