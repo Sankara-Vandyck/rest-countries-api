@@ -32,7 +32,7 @@
 .country-details {
   display: flex;
   width: 100%;
-  gap: 40px;
+  gap: 120px;
 }
 
 .mother-container {
@@ -46,6 +46,15 @@
   display: flex;
   gap: 20px;
   padding-top: 2px;
+
+  .country-native,
+  .country-population,
+  .country-region,
+  .country-subregion,
+  .country-capitals{
+    display: flex;
+    gap: 5px;
+  }
 }
 
 .native-name {
@@ -61,6 +70,13 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 25px;
+
+  .country-domain,
+  .country-currencies,
+  .country-language{
+    display: flex;
+    gap: 5px;
+  }
 }
 
 .border-countries {
@@ -79,17 +95,16 @@
 
 .back-button {
   display: flex;
-  flex-direction: row;
+  border: none;
   align-items: center;
   text-decoration: none;
   gap: 10px;
   margin: 0 auto;
-  color: #111517;
+  background: #fff;
 }
 
 h2 {
   font-size: 32px;
-  font-style: normal;
   font-weight: 800;
   line-height: normal;
 }
@@ -99,6 +114,8 @@ h2 {
   flex-direction: row;
   width: 136px;
   height: 40px;
+  background: #FFF;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -118,7 +135,7 @@ p {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 800;
   font-size: 16px;
   line-height: 32px;
 }
@@ -168,6 +185,10 @@ span {
     color: #fff;
     background: #2b3844;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
+  }
+
+  .back-button{
+    background: #2b3844;
   }
 
   h2,
