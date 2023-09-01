@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/CountryList.scss";
+import "../styles/CountryList.scss"
 import { Country } from "../components/CountryData";
 
 interface CountryListProps {
