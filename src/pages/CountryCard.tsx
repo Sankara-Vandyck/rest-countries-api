@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
-import axios from "axios";
-import "../styles/CountryCard.scss";
+import { fetchCountryData } from "../components/CounteyAPI";
+import "../styles/CountryCard.scss"
 
 interface Country {
   name: string;
@@ -29,17 +29,13 @@ const CountryCard: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get<Country[]>(
-          `https://restcountries.com/v2/name/${countryName}`
-        );
-        setCountry(response.data[0]);
-
-        if (response.data[0].borders && response.data[0].borders.length > 0) {
-          const borderAlphaCodes = response.data[0].borders.join(",");
-          const borderResponse = await axios.get<Country[]>(
-            `https://restcountries.com/v2/alpha?codes=${borderAlphaCodes}`
-          );
-          setBorderCountries(borderResponse.data);
+        const data = await fetchCountryData(undefined, countryName);
+        setCountry(data[0]);
+  
+        if (data[0].borders && data[0].borders.length > 0) {
+          const borderAlphaCodes = data[0].borders.join(',');
+          const borderData = await fetchCountryData(undefined, undefined, borderAlphaCodes);
+          setBorderCountries(borderData);
         }
         setTimeout(() => {
           setLoading(false);
@@ -50,7 +46,7 @@ const CountryCard: React.FC = () => {
         setLoading(false);
       }
     };
-
+  
     fetchData();
   }, [countryName]);
 

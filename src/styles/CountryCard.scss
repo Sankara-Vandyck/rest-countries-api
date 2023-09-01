@@ -14,14 +14,16 @@
 }
 
 .country-flags-content {
-  height: 100%;
+  width: 559.715px;
+  height: 483.169px;
+  flex-shrink: 0;
 }
 
 .flag-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
   height: 483.169px;
   flex-shrink: 0;
   background-size: contain;

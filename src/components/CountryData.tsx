@@ -1,9 +1,11 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CountryList from "../pages/CountryList";
 import { useAppContext } from "../components/AppContext";
-import "../styles/CountryData.scss";
+import { fetchCountryData } from "./CounteyAPI";
+import '../styles/CountryData.scss'
+
+
 
 export interface Country {
   name: string;
@@ -13,27 +15,17 @@ export interface Country {
   capital: string;
 }
 
-const CountryData: React.FC = ( ) => {
+const CountryData: React.FC = () => {
   const { searchTerm, regionFilter } = useAppContext();
   const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState(true);
 
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get<Country[]>(
-          "https://restcountries.com/v2/all"
-        );
-        setCountries(response.data);
-        setLoading(false);
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
+    fetchCountryData().then((data) => {
+      setCountries(data);
+      setLoading(false);
+    });
   }, []);
 
   const filteredCountries = countries.filter((country) => {
